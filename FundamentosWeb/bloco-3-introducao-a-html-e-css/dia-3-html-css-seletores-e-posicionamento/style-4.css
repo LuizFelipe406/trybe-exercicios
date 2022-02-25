@@ -1,0 +1,27 @@
+div:hover{
+ border: 2px solid black;
+}
+#corprimaria{
+    color: red;
+    font-style: italic;
+    font-weight: 200;
+}
+#corsecundaria{
+    color: orange;
+    font-weight: 700;
+}
+#corcomplementar{
+    color: blue;
+    font-style: italic;
+    font-size: large;
+    font-weight: 400;
+}
+#corescura{
+    color:#2e2e2e;
+    font-weight: 900;
+}
+#corclara{
+    color:#f9eac3;
+    font-style: italic;
+    font-weight: 800;
+}

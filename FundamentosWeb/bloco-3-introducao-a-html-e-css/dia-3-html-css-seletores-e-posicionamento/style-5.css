@@ -1,0 +1,42 @@
+.lista1 li{
+    background-color: yellow;
+}
+.lista1 li.impar{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.lista1 li.par{
+    color: green;
+    font-weight: bold;
+}
+.fontred{
+    color: red;
+}
+.italich{
+    font-size: 40px;
+    border: 1px solid black;
+}
+li{
+    font-size: 20px;
+}
+.fontblue{
+    color: blue;
+}
+.backpink{
+    background-color: pink;
+}
+.lista3 ul li a:hover{
+font-weight: bold;
+}
+.laranja:hover{
+    color: orange;
+}
+.verde:hover{
+    color: green;
+}
+.preto:hover{
+    color: black;
+}
+.amarelo:hover{
+    color: yellow;
+}
