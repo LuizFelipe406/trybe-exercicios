@@ -60,15 +60,15 @@ for (e = 0; e < numbers.length; e += 1) {
 console.log("O menor Valor é:", menor);
 
 // Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado;
-let array = [];
+let numbers = [];
 for (f = 1; f <= 25; f += 1) {
-    array.push(f);
+    numbers.push(f);
 }
-console.log(array);
+console.log(numbers);
 
 // Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2 .
 let newArray = [];
-for (g = 0; g < array.length; g += 1) {
-    newArray.push(array[g]/2);
+for (g = 0; g < numbers.length; g += 1) {
+    newArray.push(numbers[g]/2);
 }
 console.log(newArray);
