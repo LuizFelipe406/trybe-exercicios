@@ -39,4 +39,12 @@ soma += resultado[i];
     console.log(soma);
 }
 
-romano("XXIX");
+romano("XXXIX");
+
+// 2 - Crie uma função chamada arrayOfNumbers que receberá a variável vector como parâmetro. Através de um loop for , percorra essa variável, busque os números pares e os adicione a um novo array que deverá ser retornado ao final pela pela função.
+
+// function arrayOfNumbers(vector){
+//     for(index in vector){
+
+//     }
+// }
