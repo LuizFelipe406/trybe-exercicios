@@ -23,3 +23,17 @@ console.log(document.getElementById('elementoOndeVoceEsta').nextElementSibling);
 
 // Agora acesse o terceiroFilho a partir de pai .
 console.log(document.getElementById('pai').firstElementChild.nextElementSibling.nextElementSibling);
+
+// Crie um irmão para elementoOndeVoceEsta .
+let newSection = document.createElement('section');
+
+document.getElementById('pai').appendChild(newSection);
+
+// Crie um filho para elementoOndeVoceEsta .
+let newSon = document.createElement('div');
+
+document.getElementById('elementoOndeVoceEsta').appendChild(newSon);
+
+// Crie um filho para primeiroFilhoDoFilho .
+let primeiroFilhoDoFilhoDoFilho = document.createElement('section');
+document.getElementById('primeiroFilhoDoFilho').appendChild(primeiroFilhoDoFilhoDoFilho);
