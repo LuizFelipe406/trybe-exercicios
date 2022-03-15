@@ -37,3 +37,22 @@ document.getElementById('elementoOndeVoceEsta').appendChild(newSon);
 // Crie um filho para primeiroFilhoDoFilho .
 let primeiroFilhoDoFilhoDoFilho = document.createElement('section');
 document.getElementById('primeiroFilhoDoFilho').appendChild(primeiroFilhoDoFilhoDoFilho);
+
+// A partir desse filho criado, acesse terceiroFilho .
+console.log(document.querySelector('#primeiroFilhoDoFilho section').parentElement.parentElement.nextElementSibling);
+
+// Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+
+let paiFilhos = document.getElementById('pai').children;
+for (let i = 0; i < pai.length; i += 1) {
+    if (paiFilhos[i].id !== 'elementoOndeVoceEsta') {
+        document.getElementById('pai').remove(paiFilhos[i]);
+    }
+}
+
+// let elemento = document.getElementById('elementoOndeVoceEsta').children;
+// for (let i = 0; i < elemento.length; i += 1) {
+//     if (elemento[i].id === 'primeiroFilhoDoFilho') {
+//         continue
+//     } document.getElementById('elementoOndeVoceEsta').removeChild(elemento[i]);
+// }
