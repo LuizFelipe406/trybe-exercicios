@@ -1,13 +1,13 @@
 let corDeFundo = document.getElementById('corDeFundo');
 let corDoTexto = document.getElementById('corDoTexto');
-let tamanhoDaFonte = document.getElementById('tamanhoFonte');
+let tamanhoFonte = document.getElementById('tamanhoFonte');
 let espacamento = document.getElementById('espacamento');
 let familiaDaFont = document.getElementById('tipoDaFonte');
 let text = document.getElementById('text');
 
 corDeFundo.addEventListener('keyup', mudarFundo);
 corDoTexto.addEventListener('keyup', mudarCorTexto);
-tamanhoDaFonte.addEventListener('keyup', mudarFontSize);
+tamanhoFonte.addEventListener('keyup', mudarFontSize);
 espacamento.addEventListener('keyup', mudarEspacamento);
 familiaDaFont.addEventListener('keyup', mudarFontFamily);
 
@@ -32,7 +32,7 @@ function mudarCorTexto() {
 }
 
 function mudarFontSize() {
-    personalizacao.fontSize = tamanhoDaFonte.value;
+    personalizacao.fontSize = tamanhoFonte.value;
     localStorage.setItem('fontSize', personalizacao.fontSize);
     text.style.fontSize = localStorage.getItem('fontSize') + 'px';
 }
@@ -43,8 +43,8 @@ function mudarEspacamento() {
     text.style.lineHeight = localStorage.getItem('espacamento') + 'px';
 }
 
-function mudarFontFamily(){
-    personalizacao.fontFamily = familiaDaFont.value;
+function mudarFontFamily() {
+    personalizacao.fontFamily = familiaFont.value;
     localStorage.setItem('fontFamily', personalizacao.fontFamily);
     text.style.fontFamily = localStorage.getItem('fontFamily');
 }
