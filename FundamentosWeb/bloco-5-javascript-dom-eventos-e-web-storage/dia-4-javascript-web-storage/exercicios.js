@@ -44,7 +44,7 @@ function mudarEspacamento() {
 }
 
 function mudarFontFamily() {
-    personalizacao.fontFamily = familiaFont.value;
+    personalizacao.fontFamily = familiaDaFont.value;
     localStorage.setItem('fontFamily', personalizacao.fontFamily);
     text.style.fontFamily = localStorage.getItem('fontFamily');
 }
