@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrybeTrip</title>
+    <link rel="stylesheet" href="/bulma-0.9.3/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="column is-three-fifths
+    is-offset-one-fifth">
+        <h1 class="title ">TrybeTrip!</h1>
+    </header>
+    <form action="" method="get" id="form">
+        <main class="column is-three-fifths
+        is-offset-one-fifth">
+            <div class="field">
+                <div class="field">
+                    <label class="label" for="nome">Nome:</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input type="text" name="nome" id="nome" class="input" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="email">Email:</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input type="email" name="email" id="email" class="input" />
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="field">
+                <input type="radio" name="destino" value="cidade" id="opcao-1" />
+                <label class="radio" for="opcao-1">Cidade</label>
+                <input type="radio" name="destino" value="campo" id="opcao-2" />
+                <label class="radio" for="opcao-2">Campo</label>
+                <input type="radio" name="destino" value="praia" id="opcao-3" />
+                <label class="radio" for="opcao-3">Praia</label>
+                <input type="radio" name="destino" value="montanha" id="opcao-4" />
+                <label class="radio" for="opcao-4">Montanhas</label>
+            </div>
+            <div class="field">
+                <label class="label" for="resposta">Por que você deveria ser a pessoa desenvolvedora a ganhar o
+                    concurso TrybeTrip?</label>
+                <textarea class="textarea" name="resposta" id="resposta"></textarea>
+            </div>
+            <div class="field">
+                <div class="">
+                    <label class="label" for="data">Data:</label>
+                    <input class="input" type="date" name="data" id="data" />
+                </div>
+                <span class="help">Qual a melhor data para a sua viagem?</span>
+            </div>
+            <div class="field">
+                <div class="field">
+                    <label class="checkbox" for="concordo1">
+                        <input type="checkbox" name="concordo1" id="concordo1" />
+                        Gostaria de receber outras incríveis oportunidades oferecidas pela
+                        Trybe?</label>
+                </div>
+                <div class="field">
+                    <label class="checkbox" for="concordo2">
+                        <input type="checkbox" name="concordo2" id="concordo2" />
+                        Concordo que imagens das minhas férias poderão ser usadas na
+                        divulgação de concursos futuros.</label>
+                </div>
+            </div>
+        </main>
+        <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+                <button class='button is-link' type="submit" id="submit">Enviar</button>
+            </div>
+            <div class="control">
+                <button class='button is-link is-light' type="reset" id="resetButton">Apagar</button>
+            </div>
+        </div>
+    </form>
+    <script src="exercicio.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script>
+        const validate = new window.JustValidate('#form');
+
+        validate
+            .addField('#nome', [
+                {
+                    rule: 'minLength',
+                    value: 10,
+                },
+                {
+                    rule: 'maxLength',
+                    value: 40,
+                }
+            ])
+            .addField('#email', [
+                {
+                    rule: 'minLength',
+                    value: 10,
+                },
+                {
+                    rule: 'maxLength',
+                    value: 50,
+                },
+                {
+                    rule: 'email',
+                    errorMessage: 'Email inválido'
+                }
+            ])
+            .addField('#resposta', [
+                {
+                    rule: 'maxLength',
+                    value: 500,
+                },
+            ])
+            .addField('#concordo2', [
+                {
+                    rule: 'required',
+                    errorMessage: 'Campo Obrigatório!',
+                },
+            ])
+    </script>
+</body>
+
+</html>
