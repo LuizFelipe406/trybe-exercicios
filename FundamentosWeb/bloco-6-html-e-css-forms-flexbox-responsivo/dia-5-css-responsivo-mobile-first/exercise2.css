@@ -1,7 +1,80 @@
 html {
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
   }
   
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+  .container{
+      display: flex;
+      flex-direction: column;
+  }
+
+header, footer{
+    background-color: lightsteelblue;
+    height: fit-content;
+}
+
+header p {
+    color: goldenrod;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    list-style: none;
+    color: white;
+}
+
+.aside-one, .aside-two, .main-content{
+    background-color: beige;
+}
+
+.aside-one h2, .aside-two h2 {
+    text-align: center;
+    color: lightsteelblue;
+}
+
+.aside-one ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aside-one li {
+    flex-basis: 40%;
+    list-style: none;
+    margin: 5px;
+}
+
+.aside-two ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.main-content h1 {
+    text-align: center;
+    color: lightsteelblue;
+    font-size: 28px;
+}
+
+.main-content p, footer p {
+    max-width: 80%;
+    margin: 15px auto;
+}
+
+footer h3 {
+    color: goldenrod;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
