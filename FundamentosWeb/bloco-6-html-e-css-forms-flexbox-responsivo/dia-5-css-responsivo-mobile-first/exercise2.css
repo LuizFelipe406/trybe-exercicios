@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
+    background-color: beige
   }
   
   *, *:before, *:after {
@@ -34,32 +35,6 @@ header nav ul li {
     list-style: none;
     color: white;
 }
-
-.aside-one, .aside-two, .main-content{
-    background-color: beige;
-}
-
-.aside-one h2, .aside-two h2 {
-    text-align: center;
-    color: lightsteelblue;
-}
-
-.aside-one ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.aside-one li {
-    flex-basis: 40%;
-    list-style: none;
-    margin: 5px;
-}
-
-.aside-two ul li {
-    list-style: none;
-    margin-bottom: 5px;
-}
-
 .main-content h1 {
     text-align: center;
     color: lightsteelblue;
@@ -77,4 +52,182 @@ footer h3 {
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 0;
+}
+
+
+@media screen and (max-width:499px) {
+
+    .aside-one, .aside-two, .main-content{
+        background-color: beige;
+    }
+    
+    .aside-one h2, .aside-two h2 {
+        text-align: center;
+        color: lightsteelblue;
+    }
+    
+    .aside-one ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .aside-one li {
+        flex-basis: 40%;
+        list-style: none;
+        margin: 5px;
+    }
+    
+    .aside-two ul li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    
+  
+}
+
+@media screen and (min-width:500px) and (max-width:1099px) {
+    .asides-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    header p {
+        font-size: 35px;
+    }
+
+    header nav ul li {
+    font-size: 25px;
+    }
+
+    .aside-one h2, .aside-two h2 {
+        color: lightsteelblue;
+        font-size: 35px;
+    }
+
+    .aside-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-one ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .aside-one li {
+        width: 40%;
+        list-style: none;
+        font-size: 20px;
+        margin: 8px;
+    }
+
+    .aside-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-two {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .aside-two ul li {
+        list-style: none;
+        flex-basis: 55%;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .main-content h1 {
+        text-align: center;
+        color: lightsteelblue;
+        font-size: 35px;
+    }
+
+    .main-content p, footer p {
+        font-size: 20px;
+        max-width: 80%;
+        margin: 15px auto;
+    }
+
+}
+
+@media screen and (min-width:1100px) {
+    .asides-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    header p {
+        font-size: 40px;
+    }
+
+    header nav ul li {
+    font-size: 30px;
+    }
+
+    .aside-one h2, .aside-two h2 {
+        color: lightsteelblue;
+        font-size: 35px;
+    }
+    .aside-one {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-one ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .aside-one li {
+        width: 40%;
+        list-style: none;
+        font-size: 20px;
+        margin: 8px;
+    }
+
+    .aside-two {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-two {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .aside-two ul li {
+        list-style: none;
+        flex-basis: 55%;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .main-content h1 {
+        text-align: center;
+        color: lightsteelblue;
+        font-size: 35px;
+    }
+
+    .main-content p, footer p {
+        font-size: 20px;
+        max-width: 80%;
+        margin: 15px auto;
+    }
+
+    footer h3 {
+        font-size: 30px;
+    }
+
 }
