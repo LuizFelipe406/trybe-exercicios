@@ -1,7 +1,7 @@
 //1 -
 const createEmployee = (nome) => ({
     nomeCompleto: nome,
-    email: `${nome}@trybe.com`
+    email: `${nome.replace(' ', '_').toLowerCase()}@trybe.com`
 })
 
 const newEmployees = (func) => {
