@@ -25,7 +25,7 @@ const conteudos = [
 
 class Content extends React.Component {
   render() { 
-    return(conteudos.map((conteudo) => <li>
+    return(conteudos.map((conteudo) => <li className="CardContent">
       O conteudo é: {conteudo.conteudo} <br />
       Status: {conteudo.status} <br />
       Bloco: {conteudo.bloco} <br />
