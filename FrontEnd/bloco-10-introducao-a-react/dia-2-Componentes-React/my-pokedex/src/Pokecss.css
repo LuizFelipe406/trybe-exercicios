@@ -1,0 +1,11 @@
+.PokemonDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Pokemon {
+  flex-basis: 40%;
+  border: 1px solid black;
+  display: flex;
+  border-radius: 5px;
+}
