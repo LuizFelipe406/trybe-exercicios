@@ -1,0 +1,19 @@
+.CardHeaderAndFooter {
+  text-align: center;
+  background-color: midnightblue;
+  padding: 30px 0;
+  color: white;
+  width: 40%;
+  margin: 30px auto;
+  border-radius: 5px;
+}
+
+.CardContent {
+  text-align: center;
+  background-color: peachpuff;
+  padding: 30px 0;
+  width: 40%;
+  margin: 0px auto;
+  border-radius: 5px;
+  border: 1px solid black;
+}
