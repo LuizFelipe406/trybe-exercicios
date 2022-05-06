@@ -1,11 +1,35 @@
+body {
+  background-color: #A9A9A9;
+}
+
 .PokemonDiv {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  width: 70%;
+  margin: 15px auto;
 }
 
 .Pokemon {
   flex-basis: 40%;
-  border: 1px solid black;
-  display: flex;
+  border: 2px solid black;
   border-radius: 5px;
+  margin: 1em;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:white;
+}
+
+.PokeInfo {
+  font-size: 1.3em;
+}
+
+.PokeImage img{
+  width: 100%;
+}
+
+.PokeImage {
+  width: 30%;
 }
