@@ -17,13 +17,17 @@ class Button extends React.Component {
     console.log(buttonMessage);
     this.setState((estadoAnterior, _props) => ({
       [buttonText]: estadoAnterior[buttonText] + 1
-    }))
+    }), () => { console.log(`${buttonText}: ${this.buttonColor(this.state[buttonText])}`) })
+  }
+
+  buttonColor (num) {
+    return num % 2 === 0 ? 'green' : 'white';
   }
 
   render() {
     const { buttonText } = this.props;
     return (
-      <button onClick={this.handleClick}>{`${buttonText}:${this.state[buttonText]}`}</button>
+      <button onClick={this.handleClick} style={{ backgroundColor: this.buttonColor(this.state[buttonText])}}>{`${buttonText}:${this.state[buttonText]}`}</button>
     )
   }
 }
