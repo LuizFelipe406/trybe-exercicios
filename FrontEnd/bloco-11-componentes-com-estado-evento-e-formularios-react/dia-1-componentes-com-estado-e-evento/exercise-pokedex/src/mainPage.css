@@ -1,0 +1,18 @@
+body {
+  background-color: #A9A9A9;
+  font-family: Verdana, Geneva, Tahoma, sans-serif, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.PokemonDiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 60%;
+  margin: 15px auto;
+}
+
+.PokemonTitle {
+  text-align: center;
+  font-size: 3em;
+}
