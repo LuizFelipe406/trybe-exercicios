@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import LoginInput from './LoginInput';
+
 
 class App extends React.Component {
 	constructor(props) {
@@ -10,14 +12,16 @@ class App extends React.Component {
 	state = {
 		email: '',
 		sucos: '',
-		senha: '',
+		password: '',
 		textarea: '',
 		salvar: false,
+    formularioComErros:false,
 	};
 
 	handleChange = ({ target }) => {
 		const { name } = target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
+    if(target.type === 'password') this.checkPassword(target);
 		this.setState({ [name]: value });
 	};
 
@@ -25,6 +29,16 @@ class App extends React.Component {
 		event.preventDefault();
 		alert(`Selected file - ${this.fileInput.current.files[0].name}`);
 	};
+
+  checkPassword = ({ type, value }) => {
+    if(type === 'password') {
+      if( value.length < 6 || value.length > 12 ) {
+        this.setState({ formularioComErros: true });
+      } else {
+        this.setState({ formularioComErros: false });
+      }
+    }
+  }
 
 	render() {
 		return (
@@ -47,22 +61,12 @@ class App extends React.Component {
 					<fieldset name="login">
 						<label>
 							Email:
-							<input
-								type="email"
-								name="email"
-								value={this.state.email}
-								onChange={this.handleChange}
-							></input>
+              <LoginInput type="email" value={this.state.email} onChange={this.handleChange} />
 						</label>
 
 						<label>
 							Senha:
-							<input
-								type="password"
-								name="senha"
-								value={this.state.senha}
-								onChange={this.handleChange}
-							></input>
+              <LoginInput type="password" value={this.state.password} onChange={this.handleChange} />
 						</label>
 					</fieldset>
 
