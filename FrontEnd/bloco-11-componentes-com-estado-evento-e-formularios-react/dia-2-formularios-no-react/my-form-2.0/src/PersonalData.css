@@ -1,0 +1,32 @@
+fieldset {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputText {
+	padding: 10px 0;
+	border-radius: 5px;
+	flex-grow: 1;
+}
+
+.inputSpan {
+	flex-basis: 8%;
+}
+
+.inputDiv {
+	width: 80%;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.inputRadio {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
