@@ -2,42 +2,6 @@ import React from 'react';
 import './PersonalData.css';
 
 class PersonalData extends React.Component {
-	state = {
-		nome: '',
-		email: '',
-		cpf: '',
-		endereco: '',
-		cidade: '',
-		estado: '',
-		tipo: '',
-	};
-
-	handleChange = ({ target }) => {
-		const { name, value } = target;
-		let valor = value;
-		switch (name) {
-			case 'nome':
-				valor = value.toUpperCase();
-				break;
-			case 'endereco':
-				valor = value
-					.normalize('NFD')
-					.replace(/([\u0300-\u036f]|[^0-9a-zA-Z\s])/g, '');
-				break;
-			default:
-				valor = value;
-		}
-		this.setState({ [name]: valor });
-	};
-
-	handleBlur = ({ target }) => {
-		const { value } = target;
-		let valor = value.split('');
-		valor = parseInt(valor[0], 10);
-		if (isNaN(valor) === false) {
-			this.setState({ cidade: '' });
-		}
-	};
 
 	render() {
 		const estados = [
@@ -69,6 +33,7 @@ class PersonalData extends React.Component {
 			'Sergipe',
 			'Tocantins',
 		];
+		const { onChange, onBlur, state } = this.props;
 		return (
 			<fieldset>
 				<h2>Dados Pessoais</h2>
@@ -79,9 +44,9 @@ class PersonalData extends React.Component {
 						type="text"
 						maxLength="40"
 						name="nome"
-						value={this.state.nome}
+						value={state.nome}
 						required
-						onChange={this.handleChange}
+						onChange={onChange}
 					></input>
 				</label>
 
@@ -92,9 +57,9 @@ class PersonalData extends React.Component {
 						type="email"
 						maxLength="50"
 						name="email"
-						value={this.state.email}
+						value={state.email}
 						required
-						onChange={this.handleChange}
+						onChange={onChange}
 					></input>
 				</label>
 
@@ -105,9 +70,9 @@ class PersonalData extends React.Component {
 						type="text"
 						maxLength="11"
 						name="cpf"
-						value={this.state.cpf}
+						value={state.cpf}
 						required
-						onChange={this.handleChange}
+						onChange={onChange}
 					></input>
 				</label>
 
@@ -118,9 +83,9 @@ class PersonalData extends React.Component {
 						type="text"
 						maxLength="200"
 						name="endereco"
-						value={this.state.endereco}
+						value={state.endereco}
 						required
-						onChange={this.handleChange}
+						onChange={onChange}
 					></input>
 				</label>
 
@@ -131,10 +96,10 @@ class PersonalData extends React.Component {
 						type="text"
 						maxLength="28"
 						name="cidade"
-						value={this.state.cidade}
+						value={state.cidade}
 						required
-						onChange={this.handleChange}
-						onBlur={this.handleBlur}
+						onChange={onChange}
+						onBlur={onBlur}
 					></input>
 				</label>
 
@@ -143,8 +108,8 @@ class PersonalData extends React.Component {
 					<select
 						className="inputText"
 						name="estado"
-						value={this.state.estado}
-						onChange={this.handleChange}
+						value={state.estado}
+						onChange={onChange}
 						required
 					>
 						{estados.map((estado) => (
@@ -160,7 +125,7 @@ class PersonalData extends React.Component {
 						id="casa"
 						name="tipo"
 						value="Casa"
-						onChange={this.handleChange}
+						onChange={onChange}
 					></input>
 					<label htmlFor="casa">Casa</label>
 					<input
@@ -168,7 +133,7 @@ class PersonalData extends React.Component {
 						id="apartamento"
 						name="tipo"
 						value="Apartamento"
-						onChange={this.handleChange}
+						onChange={onChange}
 					></input>
 					<label htmlFor="apartamento">Apartamento</label>
 				</div>
