@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 import PersonalData from './PersonalData';
 import LastJob from './LastJob';
-import ButtonSubmit from './ButtonSubmit';
+import Buttons from './Buttons';
 
 class App extends React.Component {
-  state = {
+	state = {
 		nome: '',
 		email: '',
 		cpf: '',
@@ -13,9 +13,10 @@ class App extends React.Component {
 		cidade: '',
 		estado: '',
 		tipo: '',
-    resumoCurriculo: '',
-    cargo: '',
-    resumoCargo: '',
+		resumoCurriculo: '',
+		cargo: '',
+		resumoCargo: '',
+		click: false,
 	};
 
 	handleChange = ({ target }) => {
@@ -36,7 +37,6 @@ class App extends React.Component {
 		this.setState({ [name]: valor });
 	};
 
-
 	handleBlur = ({ target }) => {
 		const { value } = target;
 		let valor = value.split('');
@@ -46,17 +46,46 @@ class App extends React.Component {
 		}
 	};
 
-  render() {
-    return (
-      <div className="Form">
-        <form>
-        <PersonalData state={ this.state } onChange={ this.handleChange } onBlur={ this.handleBlur }/>
-        <LastJob state={ this.state } onChange={ this.handleChange }/>
-        <ButtonSubmit state={ this.state } />
-        </form>
-      </div>
-    );
+
+  handleClickEnviar = () => {
+    this.setState((estadoAnterior, _props) => {
+      if ( estadoAnterior.click === false ) {
+        return { click: true };
+      } return { click: false };
+    })
   }
+
+	handleClickLimpar = () => {
+		this.setState({
+			nome: '',
+			email: '',
+			cpf: '',
+			endereco: '',
+			cidade: '',
+			estado: '',
+			tipo: '',
+			resumoCurriculo: '',
+			cargo: '',
+			resumoCargo: '',
+			click: false,
+		});
+	};
+
+	render() {
+		return (
+			<div className="Form">
+				<form>
+					<PersonalData
+						state={this.state}
+						onChange={this.handleChange}
+						onBlur={this.handleBlur}
+					/>
+					<LastJob state={this.state} onChange={this.handleChange} />
+				</form>
+				<Buttons onClickEnviar={ this.handleClickEnviar } onClickLimpar={ this.handleClickLimpar } state={this.state} />
+			</div>
+		);
+	}
 }
 
 export default App;
